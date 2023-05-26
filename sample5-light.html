@@ -36,13 +36,13 @@ var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 sphere.position.set( 0, 0, -5 );
 scene.add( sphere );
 
-//角柱～円柱
-var cylinderGeometry = new THREE.CylinderGeometry( 0.5, 2, 5,7);
-//上の底面の半径、下の底面の半径、高さ、何角柱か
-var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
-var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-cylinder.position.set( 0, 0, 0 );
-scene.add( cylinder );
+//球
+var sphereGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
+//半径、垂直方向の分割数、水平方向の分割数
+var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0xff00ff,wireframe: true} );
+var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+sphere.position.set( 0, 0, -5 );
+scene.add( sphere );
 
 
   
