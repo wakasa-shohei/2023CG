@@ -48,7 +48,7 @@
 　　　scene.add( sphere );
     
     //角柱
-    var torusKnotGeometry = new THREE.TorusKnotGeometry(2,0.4,10,12,1,1); 
+    var torusKnotGeometry = new THREE.TorusKnotGeometry(2.5,0.25,50,25,2,1); 
 
     var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff,wireframe: true} );
     var torusKnot = new THREE.Mesh( torusKnotGeometry, torusKnotMaterial );
@@ -64,7 +64,8 @@
       sphere.rotation.x += 0.01;
       sphere.rotation.y += 0.01;
       
-      torusKnot.rotation.y += 0.01;
+      torusKnot.rotation.x += 0.01;
+      torusKnot.rotation.y += 0.02;
   
       renderer.render(scene, camera);
       
