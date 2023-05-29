@@ -8,7 +8,7 @@
   <!-- <script src="./three.js"></script> -->
   <!-- three.jsを読み込む(CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+  
 </head>
 <body>
  <script>
@@ -28,8 +28,6 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     
-    //カメラローラーの作成
-    const controls = new THREE.OrbitControls(camera, document.body);
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
     directionalLight1.position.set(1, 1, 1);
@@ -50,7 +48,7 @@
 　　　scene.add( sphere );
     
     //角柱
-    var torusKnotGeometry = new THREE.TorusKnotGeometry(2,0.1,40,12,7,10); 
+    var torusKnotGeometry = new THREE.TorusKnotGeometry(2,0.1,40,12,7,7); 
 
     var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff,wireframe: true} );
     var torusKnot = new THREE.Mesh( torusKnotGeometry, torusKnotMaterial );
@@ -69,7 +67,7 @@
       torusKnot.rotation.y += 0.01;
   
       renderer.render(scene, camera);
-      requestAnimationFrame(update);
+      
 
     };
     update();
