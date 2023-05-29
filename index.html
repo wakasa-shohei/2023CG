@@ -40,16 +40,12 @@
     scene.add(directionalLight2);
     
 　  //球
-　　　var sphereGeometry = new THREE.SphereGeometry( 0.5, 64, 64); 
-　　　//半径、垂直方向の分割数、水平方向の分割数
-　　　var sphereMaterial= new THREE. MeshPhongMaterial( {color: 0xabcdef,wireframe:true} );
-　　　var sphere= new THREE.Mesh( sphereGeometry, sphereMaterial);
-　　　sphere.position.set( 0, 0, -5);
-　　　scene.add(sphere);
-    
- 
-    
-  
+　　var sphereGeometry = new THREE.SphereGeometry( 0.5, 64, 64); 
+　　//半径、垂直方向の分割数、水平方向の分割数
+　　var sphereMaterial= new THREE. MeshPhongMaterial( {color: 0xabcdef,wireframe:true} );
+　　var sphere= new THREE.Mesh( sphereGeometry, sphereMaterial);
+　　sphere.position.set( 0, 0, -5);
+　　scene.add(sphere);
     
     //ドーナッツ
     var torusGeometry = new THREE.TorusGeometry( 2, 0.2, 15, 30 ); 
@@ -62,15 +58,10 @@
     // 初回実行
     var update = function() {
       requestAnimationFrame(update);
-  
-      // 球を回転させる
       
       //ドーナツを回転させる
       torus.rotation.y += 0.02;
-  
       renderer.render(scene, camera);
-      
-
     };
     update();
   }
