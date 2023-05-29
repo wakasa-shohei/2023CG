@@ -39,6 +39,12 @@
     // シーンに追加
     scene.add(directionalLight2);
     
+     var geometry = new THREE.BoxGeometry(1, 1, 1);
+     var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+     var box = new THREE.Mesh(geometry, material);
+     box.position.set(0,0,0); //位置を指定
+     scene.add(box);   // シーンに追加
+
 　  //球
 　　var sphereGeometry = new THREE.SphereGeometry( 0.4, 64, 64); 
 　　//半径、垂直方向の分割数、水平方向の分割数
@@ -67,7 +73,9 @@
     var update = function() {
       requestAnimationFrame(update);
       
-      //ドーナツを回転させる
+      box.rotation.x+=0.02;
+      box.rotation.x+=0.02;
+      
       torus.rotation.y += 0.02;
       renderer.render(scene, camera);
     };
