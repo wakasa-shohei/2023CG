@@ -44,7 +44,7 @@
 　　　//半径、垂直方向の分割数、水平方向の分割数
 　　　var sphereMaterial= new THREE. MeshPhongMaterial( {color: 0xabcdef,wireframe:true} );
 　　　var sphere= new THREE.Mesh( sphereGeometry, sphereMaterial);
-　　　sphere.position.set( 0, 2, -5);
+　　　sphere.position.set( 0, 0, -5);
 　　　scene.add(sphere);
     
     //球
@@ -52,7 +52,7 @@
 　　　//半径、垂直方向の分割数、水平方向の分割数
 　　　var sphereMaterial2= new THREE. MeshPhongMaterial2( {color: 0x123456,wireframe:true} );
 　　　var sphere2= new THREE.Mesh( sphereGeometry2, sphereMaterial2);
-　　　sphere.position.set( 0, 0, -5);
+　　　sphere.position.set( 0, 1, -5);
 　　　scene.add(sphere2);
     
   
@@ -72,7 +72,7 @@
       // 球を回転させる
       
       //ドーナツを回転させる
-      torus.rotation.x += 0.02;
+      torus.rotation.y += 0.02;
   
       renderer.render(scene, camera);
       
