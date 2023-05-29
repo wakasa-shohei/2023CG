@@ -6,20 +6,20 @@
   
   <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
   <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
-  
 </head>
 <body>
- <script>
-   window.addEventListener('DOMContentLoaded', init);
+  <script>
+    window.addEventListener('DOMContentLoaded', init);
+   
     function init() {
 
     const width = 800
-    const eight = 600;
+    const height = 600;
   
     // レンダラーを作成
     var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(width, height);
     document.body.appendChild(renderer.domElement);
+    renderer.setSize(width, height);
   
     // シーンを作成
     var scene = new THREE.Scene();
