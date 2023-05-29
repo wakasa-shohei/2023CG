@@ -42,15 +42,15 @@
 　  //球
 　　　var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
 　　　//半径、垂直方向の分割数、水平方向の分割数
-　　　var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff,wireframe: true} );
+　　　var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
 　　　var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 　　　sphere.position.set( 0, 0, -5 );
 　　　scene.add( sphere );
     
     //角柱
-    var torusKnotGeometry = new THREE.TorusKnotGeometry(1.5,0.3,20,6,3,2); 
+    var torusKnotGeometry = new THREE.TorusKnotGeometry(2,0.1,40,12,7,10); 
 
-    var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff} );
+    var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff,wireframe: true} );
     var torusKnot = new THREE.Mesh( torusKnotGeometry, torusKnotMaterial );
     torusKnot.position.set( 0, 0, -5);
     scene.add( torusKnot );
