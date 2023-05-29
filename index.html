@@ -2,20 +2,19 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>sample1</title>
-
-  <!-- three.jsを読み込む(ローカル) -->
-  <!-- <script src="./three.js"></script> -->
-  <!-- three.jsを読み込む(CDN) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+  <title>提出用</title>
+  
+  <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   
 </head>
 <body>
  <script>
-  var init = function() {
+   window.addEventListener('DOMContentLoaded', init);
+    function init() {
 
-    var width = 800,
-        height = 600;
+    const width = 800
+    const eight = 600;
   
     // レンダラーを作成
     var renderer = new THREE.WebGLRenderer();
@@ -26,16 +25,20 @@
     var scene = new THREE.Scene();
   
     // カメラを作成
-    var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+    var camera = new THREE.PerspectiveCamera(45, width / height);
+    
+    camera.position.set(0, 0, 5);
+
+    const controls = new THREE.OrbitControls(camera, document.body); 
     
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-    directionalLight1.position.set(1, 1, 1);
+    directionalLight1.position.set(10, 10, 10);
     // シーンに追加
     scene.add(directionalLight1);
     // 平行光源2
     var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-    directionalLight2.position.set(-1, 1, 1);
+    directionalLight2.position.set(-10, -10, -10);
     // シーンに追加
     scene.add(directionalLight2);
     
@@ -81,7 +84,7 @@
       all.rotation.y+=0.03;
     }
   }
-  window.addEventListener('DOMContentLoaded', init);
+  
 </script>
 </body>
 </html>
