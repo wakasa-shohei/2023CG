@@ -40,7 +40,7 @@
     scene.add(directionalLight2);
     
      var geometry = new THREE.BoxGeometry(1, 1, 1);
-     var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+     var material = new THREE.MeshPhongMaterial({ color: 0x0248ac });
      var box = new THREE.Mesh(geometry, material);
      box.position.set(0,0,0); //位置を指定
      scene.add(box);   // シーンに追加
@@ -74,9 +74,9 @@
       requestAnimationFrame(update);
       
       box.rotation.x+=0.02;
-      box.rotation.x+=0.02;
+      box.rotation.y+=0.02;
       
-      torus.rotation.y += 0.04;
+      torus.rotation.x += 0.04;
       torus.rotation.y += 0.02;
       renderer.render(scene, camera);
     };
