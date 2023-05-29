@@ -56,7 +56,7 @@
 　　var sphereGeometry = new THREE.SphereGeometry( 0.4, 64, 64); 
 　　var sphereMaterial= new THREE. MeshPhongMaterial( {color: 0xabcdef,wireframe:true} );
 　　var sphere1= new THREE.Mesh( sphereGeometry, sphereMaterial);
-　　sphere1.position.set( 0, 3, 0,0);
+　　sphere1.position.set( 0, 2, 0);
 　　scene.add(sphere1);
     
 　　
@@ -68,7 +68,7 @@
 　　sphere3.position.set( -0, 1, 0,0);
     
     var sphere4= new THREE.Mesh( sphereGeometry, sphereMaterial2);
-　　sphere4.position.set( -0, 3, 0,0);
+　　sphere4.position.set( -0, 2, 0);
 　　scene.add(sphere4);
     
     const all=new THREE.Group()
@@ -85,7 +85,7 @@
       
       box.rotation.x+=0.01
       sphere1.rotation.x+=0.01;
-      sphere4.rotation.x-=0.01;
+      sphere4.rotation.x+=0.01;
       
       all.rotation.x+=0.03;
       all.rotation.y+=0.03;
