@@ -8,7 +8,7 @@
   <!-- <script src="./three.js"></script> -->
   <!-- three.jsを読み込む(CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
-
+  <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
  <script>
@@ -38,7 +38,9 @@
     directionalLight2.position.set(-1, 1, 1);
     // シーンに追加
     scene.add(directionalLight2);
-  
+    //カメラローラーの作成
+    const controls = new THREE.OrbitControls(camera, document.body);
+    
 　  //球
 　　　var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
 　　　//半径、垂直方向の分割数、水平方向の分割数
@@ -67,6 +69,8 @@
       torusKnot.rotation.y += 0.01;
   
       renderer.render(scene, camera);
+      requestAnimationFrame(update);
+
     };
     update();
   }
