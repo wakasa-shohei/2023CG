@@ -48,7 +48,7 @@
     scene.add(axisHelper);
       
     var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshPhongMaterial({ color: 0x0248ac });
+    var material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
     var box = new THREE.Mesh(geometry, material);
     box.position.set(0,0,0); //位置を指定
     scene.add(box);   // シーンに追加
@@ -64,13 +64,20 @@
 　　var sphere2= new THREE.Mesh( sphereGeometry, sphereMaterial2);
 　　sphere2.position.set( 0, 1, 0);
 　　
-    var sphere3= new THREE.Mesh( sphereGeometry, sphereMaterial);
+    var sphere3= new THREE.Mesh( sphereGeometry, sphereMaterial2);
 　　sphere3.position.set( 0, -1, 0);
     
-    var sphere4= new THREE.Mesh( sphereGeometry, sphereMaterial2);
+    var sphere4= new THREE.Mesh( sphereGeometry, sphereMaterial);
 　　sphere4.position.set( -1, 0, 0);
 　　scene.add(sphere4);
-    
+      
+   
+    var torusGeometry = new THREE.TorusGeometry( 0.2, 0.2, 32, 64 ); 
+    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff } );
+    var torus = new THREE.Mesh( torusGeometry, torusMaterial );
+    torus.position.set( 0, 0, 0);
+    scene.add( torus );
+
     const all=new THREE.Group()
     all.add(sphere2);
     all.add(sphere3);
