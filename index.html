@@ -42,14 +42,14 @@
 　  //球
 　　　var sphereGeometry = new THREE.SphereGeometry( 0.5, 128, 128 ); 
 　　　//半径、垂直方向の分割数、水平方向の分割数
-　　　var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x1ab591,wireframe:true} );
+　　　var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x1ab591} );
 　　　var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 　　　sphere.position.set( 0, 0, -5 );
 　　　scene.add( sphere );
     
     //ドーナッツ
     var torusGeometry = new THREE.TorusGeometry( 1.5, 0.2, 15, 30 ); 
-    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xff0000 } );
+    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xff0000,wireframe:true} );
     var torus = new THREE.Mesh( torusGeometry, torusMaterial );
     torus.position.set( 0, 0, -5);
     scene.add( torus );
