@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>提出用2</title>
+    <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+  <script>
+          window.addEventListener('DOMContentLoaded', init);
+
+      function init() {
+        
+        const width = 800
+        const height = 600;
+
+   
+        var renderer = new THREE.WebGLRenderer();
+        document.body.appendChild(renderer.domElement);
+        renderer.setSize(width, height);
+
+       
+        const scene = new THREE.Scene();
+
+        
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        
+        camera.position.set(1, 2, 5); 
+        camera.lookAt(0, 0, 0); 
+
+        
+        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(10, 10, 10);
+        
+        scene.add(directionalLight1);
+        
+        var directionalLight2 = new THREE.DirectionalLight(0x888888);
+        directionalLight2.position.set(-10, -10, 10);
+        
+        scene.add(directionalLight2);
+
+      
+        const gridHelper = new THREE.GridHelper(2,10); 
+        scene.add(gridHelper);
+        const axisHelper = new THREE.AxisHelper(2); 
+        scene.add(axisHelper);
+        
+        var textureLoader = new THREE.TextureLoader(); 
+        var texture = textureLoader.load("cit.png");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+       
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var box = new THREE.Mesh(geometry, mat)
+        box.position.z=-5; 
+        scene.add(box);   
+
+        update();
+
+        function update() {
+          renderer.render(scene, camera);
+          requestAnimationFrame(update);
+          box.rotation.x += 0.01;
+          box.rotation.y += 0.01;
+        }
+      }
+    </script>
+</body>
+</html>
