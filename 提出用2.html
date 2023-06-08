@@ -8,49 +8,53 @@
 </head>
 <body>
   <script>
-          window.addEventListener('DOMContentLoaded', init);
+      
+      window.addEventListener('DOMContentLoaded', init);
 
       function init() {
-        
+        // サイズを指定
         const width = 800
         const height = 600;
 
-   
+        // レンダラーを作成
         var renderer = new THREE.WebGLRenderer();
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
 
-       
+        // シーンを作成
         const scene = new THREE.Scene();
 
-        
+        // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
-        
+        // カメラの初期座標を設定
         camera.position.set(1, 2, 5); 
-        camera.lookAt(0, 0, 0); 
 
-        
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera, document.body); 
+        // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(10, 10, 10);
-        
+        // シーンに追加
         scene.add(directionalLight1);
-        
+        // 平行光源2
         var directionalLight2 = new THREE.DirectionalLight(0x888888);
         directionalLight2.position.set(-10, -10, 10);
-        
+        // シーンに追加
         scene.add(directionalLight2);
 
-      
+        // helper
         const gridHelper = new THREE.GridHelper(2,10); 
         scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(2); 
         scene.add(axisHelper);
-        
+          
+        // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader(); 
         var texture = textureLoader.load("cit.png");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
-       
+          
+        // 箱を作成
         var geometry = new THREE.BoxGeometry(1, 1, 1);
         var box = new THREE.Mesh(geometry, mat)
         box.position.z=-5; 
@@ -59,8 +63,10 @@
         update();
 
         function update() {
+          // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+          // 箱を回転させる
           box.rotation.x += 0.01;
           box.rotation.y += 0.01;
         }
