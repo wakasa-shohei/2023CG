@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>提出用</title>
+  
+  <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+  <script>
+    window.addEventListener('DOMContentLoaded', init);
+   
+    function init() {
+
+    const width = 800
+    const height = 600;
+  
+    // レンダラーを作成
+    var renderer = new THREE.WebGLRenderer();
+    document.body.appendChild(renderer.domElement);
+    renderer.setSize(width, height);
+  
+    // シーンを作成
+    var scene = new THREE.Scene();
+  
+    // カメラを作成
+    var camera = new THREE.PerspectiveCamera(45, width / height);
+    
+    camera.position.set(0, 0, 5);
+
+    const controls = new THREE.OrbitControls(camera, document.body); 
+    
+    // 平行光源1
+    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+    directionalLight1.position.set(10, 10, 10);
+    // シーンに追加
+    scene.add(directionalLight1);
+    // 平行光源2
+    var directionalLight2 = new THREE.DirectionalLight(0x888888);
+    directionalLight2.position.set(-10, -10, -10);
+    // シーンに追加
+    scene.add(directionalLight2);
+      
+    const gridHelper = new THREE.GridHelper(2,10); // size, step
+    scene.add(gridHelper);
+    const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
+    scene.add(axisHelper);
+      
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+    var box = new THREE.Mesh(geometry, material);
+    box.position.set(0,0,0); //位置を指定
+    scene.add(box);   // シーンに追加
+
+　　var sphereGeometry = new THREE.SphereGeometry( 0.4, 64, 64); 
+　　var sphereMaterial= new THREE. MeshPhongMaterial( {color: 0xabcdef,wireframe:true} );
+　　var sphere1= new THREE.Mesh( sphereGeometry, sphereMaterial);
+　　sphere1.position.set( 1, 0, 0);
+　　scene.add(sphere1);
+    
+　　
+　　var sphereMaterial2= new THREE. MeshPhongMaterial( {color: 0x123456} );
+　　var sphere2= new THREE.Mesh( sphereGeometry, sphereMaterial2);
+　　sphere2.position.set( 0, 1, 0);
+　　
+    var sphere3= new THREE.Mesh( sphereGeometry, sphereMaterial2);
+　　sphere3.position.set( 0, -1, 0);
+    
+    var sphere4= new THREE.Mesh( sphereGeometry, sphereMaterial);
+　　sphere4.position.set( -1, 0, 0);
+　　scene.add(sphere4);
+      
+   
+    var torusGeometry = new THREE.TorusGeometry( 2, 0.2, 32, 64 ); 
+    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff,wireframe:true} );
+    var torus = new THREE.Mesh( torusGeometry, torusMaterial );
+    torus.position.set( 0, 0, 0);
+    scene.add( torus );
+
+    const all=new THREE.Group()
+    all.add(sphere2);
+    all.add(sphere3);
+    all.position.set(0,0,0);
+    scene.add(all);
+    
+    update()
+    
+    function update() {
+      renderer.render(scene, camera);
+      requestAnimationFrame(update);
+      
+      box.rotation.x+=0.03
+      sphere1.rotation.x+=0.01;
+      sphere4.rotation.x+=0.01;
+      torus.rotation.x += 0.02;
+      
+      all.rotation.x+=0.03;
+      all.rotation.y+=0.03;
+    }
+  }
+</script>
+</body>
+<hr>工夫した点:球体と、四角、ドーナツ型の図形を回転させてみた<hr>
+</html>
