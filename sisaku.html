@@ -64,10 +64,10 @@
         var mat3 = new THREE.MeshPhongMaterial();
         mat3.map = texture;
         
-        var geometry = new THREE.PlaneGeometry( 0, 10, 10);
-        var material = new THREE.MeshPhongMaterial({ color: 0x123456 });
-        var plane = new THREE.Mesh( geometry, material );
-        //var plane = new THREE.Mesh(geometry, mat2);
+        var geometry = new THREE.PlaneGeometry( 10, 10, 10);
+        //var material = new THREE.MeshPhongMaterial({ color: 0x123456 });
+        //var plane = new THREE.Mesh( geometry, material );
+        var plane = new THREE.Mesh(geometry, mat2);
         plane.position.set(0,0,0);
         scene.add( plane );
          
