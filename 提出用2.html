@@ -63,7 +63,7 @@
         mat1.bumpMap = bump;
         mat1.bumpscale = 0.2;
 
-        // 箱を作成
+        // 球を作成
        var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
 　　　　//半径、垂直方向の分割数、水平方向の分割数
 　　　　//var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x00ffff,wireframe: true} );
@@ -72,14 +72,6 @@
        sphere.position.set( 0, 0, 0 );
        scene.add( sphere );  
           
-        //角すい〜円すい
-        var coneGeometry = new THREE.ConeGeometry( 0.5, 1, 5 ); 
-        //半径、高さ、底面の分割数
-        //var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
-        //var cone = new THREE.Mesh( coneGeometry, coneMaterial );
-        var cone = new THREE.Mesh(geometry, mat1);
-        cone.position.set(0,0,-3);
-        scene.add( cone )
         update();
 
         function update() {
@@ -88,9 +80,7 @@
           requestAnimationFrame(update);
           // 箱を回転させる
           sphere.rotation.x += 0.01;
-          sphere.rotation.y += 0.01;
-          cone.rotation.x+= 0.01;
-          cone.rotation.y+= 0.01;
+          sphere.rotation.y += 0.01
         }
       }
     </script>
