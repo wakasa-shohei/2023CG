@@ -53,6 +53,12 @@
         var texture = textureLoader.load("world.map.png");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
+         
+        var textureLoader = new THREE.TextureLoader(); 
+        var texture = textureLoader.load("moon_map.png");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat1.map = texture;
+        
         
          
         // 球を作成
