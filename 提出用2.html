@@ -71,12 +71,17 @@
         scene.add( sphere ); 
           
         var sphereGeometry1 = new THREE.SphereGeometry( 0.2, 32, 32 ); 
-　　　　 //半径、垂直方向の分割数、水平方向の分割数
-        var sphere1 = new THREE.Mesh(sphereGeometry1, mat);
+        var sphere1 = new THREE.Mesh(sphereGeometry1, mat1);
         sphere1.position.set( 0, 0, -3 );
         scene.add( sphere1 );   
         
-
+        var torusGeometry = new THREE.TorusGeometry( 0.001, 1, 32, 64 ); 
+        var torusMaterial = new THREE. MeshPhongMaterial( { color: 0x0ffff0,wireframe:true} );
+        var torus = new THREE.Mesh( torusGeometry, torusMaterial );
+        torus.position.set( 0, 0, 0);
+        scene.add(torus);
+        
+   
         update();
 
         function update() {
@@ -85,7 +90,7 @@
           requestAnimationFrame(update);
           // 箱を回転させる
           sphere.rotation.x += 0.01;
-          sphere.rotation.y += 0.01;
+          sphere1.rotation.x += 0.01;
         }
       }
     </script>
