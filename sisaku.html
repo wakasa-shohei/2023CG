@@ -59,36 +59,32 @@
         var mat2 = new THREE.MeshPhongMaterial();
         mat2.map = texture;
          
-        var geometry1 = new THREE.BoxGeometry(0.9, 0.9, 3);
+        var geometry1 = new THREE.BoxGeometry(0.9, 3, 0.9);
         var box1 = new THREE.Mesh(geometry1, mat2);
         box1.position.set(1,0,1); 
         scene.add(box1);
-        
-        var geometry2 = new THREE.BoxGeometry(0.9, 0.9, 4);
+          
+        var geometry2 = new THREE.BoxGeometry(0.9, 3, 0.9);
         var box2 = new THREE.Mesh(geometry2, mat2);
         box2.position.set(2,0,1); 
         scene.add(box2);
         
-        var geometry3 = new THREE.BoxGeometry(0.9, 0.9, 3);
+        var geometry3 = new THREE.BoxGeometry(0.9, 3, 0.9);
         var box3 = new THREE.Mesh(geometry3, mat2);
         box3.position.set(3,0,1); 
         scene.add(box3);
         
-        var geometry4 = new THREE.BoxGeometry(0.9, 0.9, 4);
-        var box4 = new THREE.Mesh(geometry4, mat2);
+        var box4 = new THREE.Mesh(geometry1, mat2);
         box4.position.set(1,0,-1); 
         scene.add(box4);
         
-        var geometry5 = new THREE.BoxGeometry(0.9, 0.9, 4);
-        var box5 = new THREE.Mesh(geometry5, mat2);
+        var box5= new THREE.Mesh(geometry2, mat2);
         box5.position.set(2,0,-1); 
         scene.add(box5);
         
-        var geometry6 = new THREE.BoxGeometry(0.9, 0.9, 3);
-        var box6 = new THREE.Mesh(geometry6, mat2);
+        var box6= new THREE.Mesh(geometry3, mat2);
         box6.position.set(3,0,-1); 
         scene.add(box6);
-        
           
         var sphereGeometry1 = new THREE.SphereGeometry( 0.2, 32, 32 ); 
         var sphere1 = new THREE.Mesh(sphereGeometry1, mat1);
