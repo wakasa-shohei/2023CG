@@ -75,7 +75,7 @@
         sphere1.position.set( 0, 0, -3 );
         scene.add( sphere1 );   
         
-        var torusGeometry = new THREE.TorusGeometry( 0.001, 0.001, 32, 64 ); 
+        var torusGeometry = new THREE.TorusGeometry( 0.001, 0.1, 32, 64 ); 
         var torusMaterial = new THREE. MeshPhongMaterial( { color: 0x0ffff0,wireframe:true} );
         var torus = new THREE.Mesh( torusGeometry, torusMaterial );
         torus.position.set( 0, 0, 0);
