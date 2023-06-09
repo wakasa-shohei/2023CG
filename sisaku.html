@@ -58,6 +58,13 @@
         var texture = textureLoader.load("img_bb.png");
         var mat2 = new THREE.MeshPhongMaterial();
         mat2.map = texture;
+          
+        var geometry = new THREE.PlaneGeometry( 10, 0, 10 );
+        //var material = new THREE.MeshPhongMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
+        //var plane = new THREE.Mesh( geometry, material );
+        var plane = new THREE.Mesh(geometry, mat1);
+        plane.position.set(0,0,0);
+        scene.add( plane );
          
         var geometry1 = new THREE.BoxGeometry(0.9, 3, 0.9);
         var box1 = new THREE.Mesh(geometry1, mat2);
