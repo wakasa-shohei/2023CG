@@ -65,7 +65,7 @@
         mat3.map = texture;
         
         var geometry = new THREE.PlaneGeometry( 1000, 0, 1000);
-        var material = new THREE.MeshPhongMaterial( {color: 0x100901, side: THREE.DoubleSide} );
+        var material = new THREE.MeshPhongMaterial({ color: 0x100901 });
         var plane = new THREE.Mesh( geometry, material );
         //var plane = new THREE.Mesh(geometry, mat2);
         plane.position.set(0,0,0);
