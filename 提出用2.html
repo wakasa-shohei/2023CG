@@ -63,11 +63,11 @@
         
         var texture2 = textureLoader.load("img/cat.png");
         var cat = new THREE.MeshPhongMaterial();
-        const material = new THREE.SpriteMaterial({ map: texture,});
-        
+        const material = new THREE.SpriteMaterial({ map: cat,});
+
 
         // よし猫を作成
-        const sprite = new THREE.Sprite(cat);
+        const sprite = new THREE.Sprite(material);
         sprite.scale.set(1,2,1);
         sprite.position.set(-1,1,0);
         scene.add(sprite);
