@@ -61,19 +61,26 @@
         var mat1 = new THREE.MeshPhongMaterial();
         mat1.map = texture1;
         
-        var texture2 = textureLoader.load("img/cat.png");
-        var cat = new THREE.MeshPhongMaterial();
-        const material = new THREE.SpriteMaterial({ map: cat,});
+       // 木をスプライトで作成
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("tree0.png");
+        const material = new THREE.SpriteMaterial({ map: texture,});
 
+        // 森を作成
+        for (let i = 0; i < 20; i++) {
+          const sprite = new THREE.Sprite(material);
+          // ランダムな座標に配置
+          sprite.position.x = 2 * (Math.random() - 0.5);
+          sprite.position.y = 0.5 * Math.random();
+          sprite.position.z = 2 * (Math.random() - 0.5);
+          // スケールを調整
+          sprite.scale.set(0.5, 0.5, 0.5);
 
-        // よし猫を作成
-        const sprite = new THREE.Sprite(material);
-        sprite.scale.set(1,2,1);
-        sprite.position.set(-1,1,0);
-        scene.add(sprite);
+          scene.add(sprite);
+        }
         
         update();
-        
+
         function update() {
           // レンダリング
           renderer.render(scene, camera);
