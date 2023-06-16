@@ -21,13 +21,16 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
 
+        // 背景の色を設定
+        renderer.setClearColor(0xffffdd);
+        
         // シーンを作成
         const scene = new THREE.Scene();
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(1, 2, 5); 
+        camera.position.set(0, 0, 5); 
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -58,30 +61,24 @@
         var texture = textureLoader.load("moon_map.png");
         var mat1 = new THREE.MeshPhongMaterial();
         mat1.map = texture;
-        
-        
          
-        // 球を作成
-        var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 ); 
-　　　　 //半径、垂直方向の分割数、水平方向の分割数
-　　　　 //var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x00ffff,wireframe: true} );
-        //var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-        var sphere = new THREE.Mesh(sphereGeometry, mat);
-        sphere.position.set( 0, 0, 0 );
-        scene.add( sphere ); 
-          
-        var sphereGeometry1 = new THREE.SphereGeometry( 0.2, 32, 32 ); 
-        var sphere1 = new THREE.Mesh(sphereGeometry1, mat1);
-        sphere1.position.set( 0, 0, -3 );
-        scene.add( sphere1 );   
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/tree0.png");
+        const material = new THREE.SpriteMaterial({ map: texture,});
+
+        // 森を作成
+        for (let i = 0; i < 20; i++) {
+          const sprite = new THREE.Sprite(material);
+          // ランダムな座標に配置
+          sprite.position.x = 2 * (Math.random() - 0.5);
+          sprite.position.y = 0.5 * Math.random();
+          sprite.position.z = 2 * (Math.random() - 0.5);
+          // スケールを調整
+          sprite.scale.set(0.5, 0.5, 0.5);
+
+          scene.add(sprite);
+        }
         
-        var torusGeometry = new THREE.TorusGeometry( 0.001, 0.1, 32, 64 ); 
-        var torusMaterial = new THREE. MeshPhongMaterial( { color: 0x0ffff0,wireframe:true} );
-        var torus = new THREE.Mesh( torusGeometry, torusMaterial );
-        torus.position.set( 0, 0, 0);
-        scene.add(torus);
-        
-   
         update();
 
         function update() {
