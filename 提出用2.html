@@ -64,9 +64,8 @@
         
         var textureLoader = new THREE.TextureLoader(); 
         var texture = textureLoader.load("cat.png");
-        const material = new THREE.SpriteMaterial({ map: texture,});
 
-        // 森を作成
+        // よし猫を作成
         for (let i = 0; i < 20; i++) {
           const sprite = new THREE.Sprite(mat2);
           // ランダムな座標に配置
