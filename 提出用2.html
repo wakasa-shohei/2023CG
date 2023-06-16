@@ -63,9 +63,9 @@
         mat1.map = texture1;
         
         var textureLoader = new THREE.TextureLoader(); 
-        var texture = textureLoader.load("cat.png");
-        var mat2 = new THREE.MeshPhongMaterial();
-        mat2.map = texture1;
+        var texture2 = textureLoader.load("cat.png");
+        var cat = new THREE.MeshPhongMaterial();
+        cat.map = texture2;
 
         // よし猫を作成
         for (let i = 0; i < 20; i++) {
