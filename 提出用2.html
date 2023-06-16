@@ -52,19 +52,9 @@
         scene.add(axisHelper);
           
         // テクスチャー読み込み
-        var textureLoader = new THREE.TextureLoader(); 
-        var texture = textureLoader.load("world.map.png");
-        var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture;
-
-        var textureLoader = new THREE.TextureLoader(); 
-        var texture = textureLoader.load("moon_map.png");
-        var mat1 = new THREE.MeshPhongMaterial();
-        mat1.map = texture1;
-        
        var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img/cat.png");
-        const material = new THREE.SpriteMaterial({ map: texture,});
+          var texture = textureLoader.load("img/cat.png");
+          const material = new THREE.SpriteMaterial({ map: texture,});
 
         // 森を作成
         for (let i = 0; i < 20; i++) {
