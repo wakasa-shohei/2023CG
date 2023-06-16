@@ -58,17 +58,17 @@
         mat.map = texture;
          
         var textureLoader = new THREE.TextureLoader(); 
-        var texture = textureLoader.load("moon_map.png");
+        var texture1 = textureLoader.load("moon_map.png");
         var mat1 = new THREE.MeshPhongMaterial();
-        mat1.map = texture;
-         
-        var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("tree0.png");
+        mat1.map = texture1;
+        
+        var textureLoader = new THREE.TextureLoader(); 
+        var texture = textureLoader.load("cat.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
         // 森を作成
         for (let i = 0; i < 20; i++) {
-          const sprite = new THREE.Sprite(mat1);
+          const sprite = new THREE.Sprite(mat2);
           // ランダムな座標に配置
           sprite.position.x = 2 * (Math.random() - 0.5);
           sprite.position.y = 0.5 * Math.random();
