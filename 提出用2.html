@@ -64,6 +64,8 @@
         
         var textureLoader = new THREE.TextureLoader(); 
         var texture = textureLoader.load("cat.png");
+        var mat2 = new THREE.MeshPhongMaterial();
+        mat2.map = texture1;
 
         // よし猫を作成
         for (let i = 0; i < 20; i++) {
@@ -84,9 +86,7 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-          // 箱を回転させる
-          sphere.rotation.x += 0.01;
-          sphere1.rotation.x += 0.01;
+        
         }
       }
     </script>
