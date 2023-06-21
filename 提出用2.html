@@ -55,6 +55,10 @@
        var texture = textureLoader.load("tree0.png");
        const material = new THREE.SpriteMaterial({ map: texture,});
 
+        var textureLoader=new THREE.TextureLoader();
+        var texture1=textureLoader.load("cat.png");
+        const material1=new THREE.SpriteMaterial({map:texture1,});
+
         // 森を作成
         for (let i = 0; i < 20; i++) {
           const sprite = new THREE.Sprite(material);
