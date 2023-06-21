@@ -52,12 +52,12 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
-        // 木をスプライトで作成
+        // 猫をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("cat.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
-        // 森を作成
+        // 猫を作成
         for (let i = 0; i < 20; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
@@ -69,6 +69,13 @@
 
           scene.add(sprite);
         }
+        var texture2 = textureLoader.load("きゅうり.png");
+        const material2 = new THREE.SpriteMaterial2({ map: texture2,});
+
+        const sprite2=new THREE.Sprite(material2);
+        sprite2.scale.set(1.2.1);
+        sprite2.position.set(0,0,0); //位置を指定
+        scene.add(sprite2);
         
         update();
 
