@@ -61,7 +61,7 @@
 
         //きゅうりをスプライトで作成
         var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load("きゅうり.png");
+        var texture = textureLoader.load("kyuri.png");
         const material2 = new THREE.SpriteMaterial({ map: texture,});
 
         //平面
@@ -82,7 +82,6 @@
           sprite1.scale.set(0.5, 0.5, 0.5);
           scene.add(sprite1);
         }
-
         
         const sprite2=new THREE.Sprite(material2);
         sprite2.scale.set(0.5,0.5,0.5);
