@@ -47,12 +47,6 @@
         scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
-
-        //テクスチャー読み込み
-        var textureLoader = new THREE.TextureLoader(); 
-        var texture = textureLoader.load("earth.png");
-        var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture;
         
         // 猫をスプライトで作成
         var textureLoader = new THREE.TextureLoader(); 
