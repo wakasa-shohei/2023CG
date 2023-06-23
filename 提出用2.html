@@ -58,30 +58,27 @@
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
         // 猫を作成
-        for (let i = 0; i < 20; i++) {
-          const sprite1= new THREE.Sprite(material1);
-          // ランダムな座標に配置
-          sprite1.position.x = 2 * (Math.random() - 0.5);
-          sprite1.position.y = 0.5 * Math.random();
-          sprite1.position.z = 2 * (Math.random() - 0.5);
-          // スケールを調整
-          sprite1.scale.set(0.5, 0.5, 0.5);
-
-          scene.add(sprite1);
-        }
+        
+        const sprite1= new THREE.Sprite(material1);
+        sprite2.position.set(0,0,0);
+        sprite1.scale.set(0.5, 0.5, 0.5);
+        scene.add(sprite1);
+        
         var texture2 = textureLoader.load("tree0.png");
         const material2 = new THREE.SpriteMaterial2({ map: texture2,});
 
         const sprite2=new THREE.Sprite(material2);
-        sprite2.scale.set(1,2,1);
+        sprite2.scale.set(0.5,0.5,0.5);
         sprite2.position.set(0,0,0); //位置を指定
         scene.add(sprite2);
         
         update();
         // 毎フレーム時に実行されるループイベントです
         function update() {
-          sprite2.position.x=+1;
-          sprite2.position.z=+1;
+          sprite1.position.x = 2 * (Math.random() - 0.5);
+          sprite1.position.y = 0.5 * Math.random();
+          sprite1.position.z = 2 * (Math.random() - 0.5);
+          
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
