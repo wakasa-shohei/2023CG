@@ -74,13 +74,14 @@
 
         /*平面
         var planeGeometry = new THREE.PlaneGeometry(5,5,10,10); //縦、横、分割数、分割数
-        var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
+        //var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
         var plane = new THREE.Mesh(geometry, mat1);
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,0,0);
         scene.add(plane);
 
-        var texture2 = textureLoader.load("tree0.png");
+        var textureLoader2 = new THREE.TextureLoader(); 
+        var texture2 = textureLoader2.load("tree0.png");
         const material2 = new THREE.SpriteMaterial2({ map: texture2,});
 
         const sprite2=new THREE.Sprite(material2);
