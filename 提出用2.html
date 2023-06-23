@@ -52,14 +52,14 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
         
-        var textureLoader = new THREE.TextureLoader(); 
-        var texture0= textureLoader.load("moon_map.png");
+        var textureLoader0 = new THREE.TextureLoader(); 
+        var texture0= textureLoader0.load("moon_map.png");
         var mat1 = new THREE.MeshPhongMaterial();
         mat1.map = texture0;
 
         // 猫をスプライトで作成
-        var textureLoader = new THREE.TextureLoader(); 
-        var texture1= textureLoader.load("cat.png");
+        var textureLoader1 = new THREE.TextureLoader(); 
+        var texture1= textureLoader1.load("cat.png");
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
         // 猫を作成
