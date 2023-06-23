@@ -80,6 +80,8 @@
         update();
         // 毎フレーム時に実行されるループイベントです
         function update() {
+          sprite2.position.x=+1;
+          sprite2.position.z=+1;
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
