@@ -22,16 +22,12 @@
         renderer.setSize(width, height);
         // 背景の色を設定
         renderer.setClearColor(0xffffdd);
-
-
         // シーンを作成
         const scene = new THREE.Scene();
-
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
         camera.position.set(0, 0, 5);
-
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
         
