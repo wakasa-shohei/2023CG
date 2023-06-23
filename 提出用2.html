@@ -92,9 +92,6 @@
         update();
         // 毎フレーム時に実行されるループイベントです
         function update() {
-          sprite1.position.x = 2 * (Math.random() - 0.5);
-          sprite1.position.y = 0.5 * Math.random();
-          sprite1.position.z = 2 * (Math.random() - 0.5);
           
           // レンダリング
           renderer.render(scene, camera);
