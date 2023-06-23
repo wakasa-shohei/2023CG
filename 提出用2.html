@@ -49,19 +49,19 @@
         scene.add(axisHelper);
 
         /*テクスチャー読み込み
-        var textureLoader0 = new THREE.TextureLoader(); 
-        var texture0 = textureLoader0.load("moon_map.png");
+        var textureLoader = new THREE.TextureLoader(); 
+        var texture0 = textureLoader.load("moon_map.png");
         var mat1 = new THREE.MeshPhongMaterial();
         mat0.map = texture0;*/
         
         // 猫をスプライトで作成
         var textureLoader = new THREE.TextureLoader(); 
-        var texture1= textureLoader.load("cat.png");
-        const material1 = new THREE.SpriteMaterial({ map: texture1,});
+        var texture= textureLoader.load("cat.png");
+        const material1 = new THREE.SpriteMaterial({ map: texture,});
 
         var textureLoader = new THREE.TextureLoader();
-        var texture2 = textureLoader.load("tree0.png");
-        const material2 = new THREE.SpriteMaterial2({ map: texture2,});
+        var texture = textureLoader.load("tree0.png");
+        const material2 = new THREE.SpriteMaterial({ map: texture,});
         
         // 猫を作成
         for(let i = 0; i < 20; i++) {
