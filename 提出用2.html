@@ -63,13 +63,6 @@
         var textureLoader = new THREE.TextureLoader();
         var texture = textureLoader.load("kyuri.png");
         const material2 = new THREE.SpriteMaterial({ map: texture,});
-
-        //平面
-        var planeGeometry = new THREE.PlaneGeometry(5,5,10,10); //縦、横、分割数、分割
-        var plane = new THREE.Mesh(geometry, mat);
-        plane.rotation.set( -Math.PI/2, 0, 0 );
-        plane.position.set(0,0,0);
-        scene.add(plane);
         
         // 猫を作成
         for(let i = 0; i < 20; i++) {
