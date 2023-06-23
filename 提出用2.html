@@ -70,11 +70,13 @@
         sprite2.position.set(0,0,0);
         scene.add(sprite2);
         
-        /*
+        
         var cylinderGeometry = new THREE.CylinderGeometry( 0.1, 0.1, 1, 32);
         var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
         var cone = new THREE.Mesh( coneGeometry, coneMaterial );
-        for(let i = 0; i < 10; i++){
+        cone.position.set(2,0,2);
+        scene.add( cone );
+        /*for(let i = 0; i < 10; i++){
           cone.position.set(1,0,i*0.1);
           scene.add( cone );
         }
@@ -89,8 +91,8 @@
         for(let i = 0; i < 10; i++){
           cone.position.set(i*0.1,0,-1);
           scene.add( cone );
-        }
-        */
+        }*/
+        
         update();
         // 毎フレーム時に実行されるループイベントです
         function update() {
