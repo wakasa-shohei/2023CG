@@ -48,15 +48,15 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
-        // テクスチャー読み込み
+        /*テクスチャー読み込み
         var textureLoader0 = new THREE.TextureLoader(); 
         var texture0 = textureLoader0.load("moon_map.png");
         var mat1 = new THREE.MeshPhongMaterial();
-        mat0.map = texture0;
+        mat0.map = texture0;*/
         
         // 猫をスプライトで作成
-        var textureLoader1 = new THREE.TextureLoader(); 
-        var texture1= textureLoader1.load("cat.png");
+        var textureLoader = new THREE.TextureLoader(); 
+        var texture1= textureLoader.load("cat.png");
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
         // 猫を作成
@@ -78,13 +78,12 @@
         plane.position.set(0,0,0);
         scene.add(plane);*/
 
-        var textureLoader2 = new THREE.TextureLoader(); 
-        var texture2 = textureLoader2.load("tree0.png");
+        var texture2 = textureLoader.load("tree0.png");
         const material2 = new THREE.SpriteMaterial2({ map: texture2,});
 
         const sprite2=new THREE.Sprite(material2);
+        sprite2.position.set(0,0,0);
         sprite2.scale.set(0.5,0.5,0.5);
-        sprite2.position.set(0,0,0); //位置を指定
         scene.add(sprite2);
         
         update();
