@@ -60,7 +60,7 @@
         const material1 = new THREE.SpriteMaterial({ map: texture,});
 
         var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load("tree0.png");
+        var texture = textureLoader.load("きゅうり.png");
         const material2 = new THREE.SpriteMaterial({ map: texture,});
         
         // 猫を作成
@@ -75,12 +75,12 @@
           scene.add(sprite1);
         }
 
-        /*平面
+        //平面
         var planeGeometry = new THREE.PlaneGeometry(5,5,10,10); //縦、横、分割数、分割
         var plane = new THREE.Mesh(geometry, mat0);
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,0,0);
-        scene.add(plane);*/
+        scene.add(plane);
         
         const sprite2=new THREE.Sprite(material2);
         sprite2.scale.set(0.5,0.5,0.5);
