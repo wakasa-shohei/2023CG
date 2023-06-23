@@ -53,9 +53,9 @@
         scene.add(axisHelper);
         
         var textureLoader = new THREE.TextureLoader(); 
-        var texture = textureLoader.load("moon_map.png");
+        var texture0= textureLoader.load("moon_map.png");
         var mat1 = new THREE.MeshPhongMaterial();
-        mat1.map = texture;
+        mat1.map = texture0;
         //平面
         var planeGeometry = new THREE.PlaneGeometry(5,5,10,10); //縦、横、分割数、分割数
         //var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
@@ -65,7 +65,6 @@
         scene.add(plane);
 
         // 猫をスプライトで作成
-        var textureLoader = new THREE.TextureLoader();  
         var texture1= textureLoader.load("cat.png");
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
