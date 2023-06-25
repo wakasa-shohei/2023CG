@@ -6,7 +6,7 @@
   </head>
 <body>
  <h1>きゅうりから逃げる猫</h1>
- きゅうりの場所から逃げようとしている猫を作った。実際には飛び跳ねて驚く個体もいるらしいです<br>
+ きゅうりの場所から逃げようとしている猫を作った。実際には飛び跳ねて驚く個体もいるらしいですq<br>
   工夫した点は猫を逃さないようx,y,z座標のどれかが1を超える又はー1よりも小さくなると猫の座標を(0,0,0)に戻すようにしたところ<br>
  <script>
       // ページの読み込みを待つ
@@ -73,6 +73,7 @@
         //柱を40本立てて檻に見立てる
         var cylinderGeometry = new THREE.CylinderGeometry( 0.05, 0.05, 2, 32);
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
+        
         var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
         for(let i = 0; i < 20; i++){
           const sprite = new THREE.Sprite(cylinder);
