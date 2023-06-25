@@ -44,9 +44,9 @@
         scene.add(directionalLight2);
 
         // helper
-        /*const gridHelper = new THREE.GridHelper(2,10); // size, step
+        const gridHelper = new THREE.GridHelper(2,10); // size, step
         scene.add(gridHelper);
-        const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
+        /*const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
         */
         // 猫をスプライトで作成
@@ -75,12 +75,14 @@
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
         var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
         for(var i = 0; i < 20; i++){
-          var m=1-i*0.1;
+          var m;
+          m=1-i*0.1;
           cylinder.position.set(m,0,i*0.1);
           scene.add(cylinder);
         }
         for(var k = 0; i < 20; k++){
-          var n=1-i*0.1;
+          var n;
+          n=1-i*0.1;
           cylinder.position.set(k*0.1,0,n);
           scene.add(cylinder);
         }
