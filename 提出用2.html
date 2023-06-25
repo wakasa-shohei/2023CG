@@ -79,52 +79,21 @@
           cylinder.position.set(1,0,1-0.1*i);
           scene.add(cylinder);
         }
-        /*
-        cylinder.position.set(1,0,1);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.8);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.6);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.4);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.2);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.-2);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.-4);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.-6);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,0.-8);
-        scene.add(cylinder);
-        cylinder.position.set(1,0,-1);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,1);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.8);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.6);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.4);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.2);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.-2);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.-4);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.-6);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,0.-8);
-        scene.add(cylinder);
-        cylinder.position.set(-1,0,-1);
-        scene.add(cylinder);
-        */
+        for(let i = 0; i < 20; i++){
+          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+          cylinder.position.set(-1,0,1-0.1*i);
+          scene.add(cylinder);
+        }
+        for(let i = 0; i < 20; i++){
+          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+          cylinder.position.set(1-0.1*i,0,1);
+          scene.add(cylinder);
+        }
+        for(let i = 0; i < 20; i++){
+          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+          cylinder.position.set(1-0.1*i,0,-1);
+          scene.add(cylinder);
+        }
         /*
         var planeGeometry = new THREE.PlaneGeometry(10,10);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xfafafa });
