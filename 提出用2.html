@@ -21,7 +21,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xffffdd);
+        renderer.setClearColor(0xff00dd);
         // シーンを作成
         const scene = new THREE.Scene();
         // カメラを作成
@@ -93,13 +93,14 @@
           cone.position.set(i*0.1,0,-1);
           scene.add(cylinder);
         }*/
+        /*
         var planeGeometry = new THREE.PlaneGeometry(10,10);
-        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xfafafa });
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-1.5,-2);
         scene.add(plane);
-        
+        */
         update();
         // 毎フレーム時に実行されるループイベントです
         function update() {
