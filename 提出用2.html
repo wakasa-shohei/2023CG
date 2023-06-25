@@ -61,32 +61,26 @@
         // 猫を作成
         const sprite1 = new THREE.Sprite(material1);
         sprite1.scale.set(0.5, 0.5, 0.5);
-        sprite1.position.set(0,0,0);
+        sprite1.position.set(0,1,0);
         scene.add(sprite1);
         
         const sprite2=new THREE.Sprite(material2);
         sprite2.scale.set(0.5,0.5,0.5);
-        sprite2.position.set(0,0,0);
+        sprite2.position.set(0,1,0);
         scene.add(sprite2);
 
         /*柱を40本立てて檻に見立てる*/
-        var cylinderGeometry = new THREE.CylinderGeometry( 0.05, 0.05, 2, 32);
+        var cylinderGeometry = new THREE.CylinderGeometry( 0.05, 0.05, 3, 32);
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
         var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        for(let i = 0; i < 10; i++){
-          cylinder.position.set(1,0,i*0.1);
+        for(let i = 0; i < 20; i++){
+          int n=1-i*0.1;
+          cylinder.position.set(n,3,i*0.1);
           scene.add(cylinder);
         }
-        for(let i = 0; i < 10; i++){
-          cylinder.position.set(-1,0,i*0.1);
-          scene.add(cylinder);
-        }
-        for(let i = 0; i < 10; i++){
-          cylinder.position.set(i*0.1,0,1);
-          scene.add(cylinder);
-        }
-        for(let i = 0; i < 10; i++){
-          cylinder.position.set(i*0.1,0,-1);
+        for(let i = 0; i < 20; i++){
+          int n=1-i*0.1;
+          cylinder.position.set(i*0.1,3,1-n);
           scene.add(cylinder);
         }
         /*
