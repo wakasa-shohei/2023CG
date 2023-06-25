@@ -74,7 +74,7 @@
         var cylinderGeometry = new THREE.CylinderGeometry( 0.05, 0.05, 2, 32);
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
         var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cone.position.set(1,0,0.1);
+        cone.position.set(1,0,1);
         scene.add(cylinder);
         /*
         for(let i = 0; i < 10; i++){
@@ -93,6 +93,12 @@
           cone.position.set(i*0.1,0,-1);
           scene.add(cylinder);
         }*/
+        var planeGeometry = new THREE.PlaneGeometry(10,10);
+        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.rotation.set( -Math.PI/2, 0, 0 );
+        plane.position.set(0,-1.5,-2);
+        scene.add(plane);
         
         update();
         // 毎フレーム時に実行されるループイベントです
