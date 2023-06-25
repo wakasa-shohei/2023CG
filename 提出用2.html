@@ -22,7 +22,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xaaaaaa);
+        renderer.setClearColor(0x222222);
         // シーンを作成
         const scene = new THREE.Scene();
         // カメラを作成
@@ -71,12 +71,11 @@
         scene.add(sprite2);
 
         //柱を40本立てて檻に見立てる
-        var cylinderGeometry = new THREE.CylinderGeometry( 0.05, 0.05, 2, 32);
-        var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
-        
-        var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        var cylinderGeometry = new THREE.CylinderGeometry( 0.01, 0.01, 2, 32);
+        var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0xaaaaaa} );
+        //var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
         for(let i = 0; i < 20; i++){
-          const sprite = new THREE.Sprite(cylinder);
+          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
           cylinder.position.set(1,0,1-0.1*i);
           scene.add(cylinder);
         }
