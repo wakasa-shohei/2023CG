@@ -71,27 +71,26 @@
         scene.add(sprite2);
         
         
-        var cylinderGeometry = new THREE.CylinderGeometry( 0.1, 0.1, 1, 32);
+        var cylinderGeometry = new THREE.CylinderGeometry( 0.05, 0.05, 2, 32);
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
         var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cylinder.position.set(2,0,2);
-        scene.add( cylinder );
-        /*for(let i = 0; i < 10; i++){
+  
+        for(let i = 0; i < 10; i++){
           cone.position.set(1,0,i*0.1);
-          scene.add( cone );
+          scene.add(cylinder);
         }
         for(let i = 0; i < 10; i++){
           cone.position.set(-1,0,i*0.1);
-          scene.add( cone );
+          scene.add(cylinder);
         }
         for(let i = 0; i < 10; i++){
           cone.position.set(i*0.1,0,1);
-          scene.add( cone );
+          scene.add(cylinder);
         }
         for(let i = 0; i < 10; i++){
           cone.position.set(i*0.1,0,-1);
-          scene.add( cone );
-        }*/
+          scene.add(cylinder);
+        }
         
         update();
         // 毎フレーム時に実行されるループイベントです
