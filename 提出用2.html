@@ -110,8 +110,8 @@
           sprite1.position.y+= 0.5 * (Math.random() - 0.5);
           sprite1.position.z+= 0.5 * (Math.random() - 0.5);
           
-          if(sprite1.position.x>2||sprite1.position.y>1||sprite1.position.z>2||sprite1.position.x<-2||sprite1.position.z<-2){
-            sprite1.position.set(0,0,0);
+          if(sprite1.position.x>1||sprite1.position.y>1||sprite1.position.z>1||sprite1.position.x<-1||sprite1.position.z<-1||sprite1.position.y<-1){
+            sprite1.position.set(0,-1,0);
           }
           
           // レンダリング
