@@ -7,7 +7,7 @@
 <body>
  <h1>きゅうりから逃げる猫</h1>
  きゅうりの場所から逃げようとしている猫を作った。実際には飛び跳ねて驚く個体もいるらしい<br>
-  工夫した点は猫を逃さないようx,y,z座標のどれかが1を超える又はー1よりも小さくなると猫の座標を(0,-1,0)に戻すようにして檻を作ったところ<br>
+  工夫した点は猫を逃さないようx,y,z座標のどれかが0.8を超える又は-0.8よりも小さくなると猫の座標を(0,-0.8,0)に戻すようにして檻を作ったところ<br>
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -118,7 +118,7 @@
           sprite1.position.y+= 0.5 * (Math.random() - 0.5);
           sprite1.position.z+= 0.5 * (Math.random() - 0.5);
           
-          if(sprite1.position.x>1||sprite1.position.y>1||sprite1.position.z>1||sprite1.position.x<-1||sprite1.position.z<-1||sprite1.position.y<-1){
+          if(sprite1.position.x>0.8||sprite1.position.y>0.8||sprite1.position.z>0.8||sprite1.position.x<-0.8||sprite1.position.z<-0.8||sprite1.position.y<-0.8){
             sprite1.position.set(0,-0.8,0);
           }
           
