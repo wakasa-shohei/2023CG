@@ -6,7 +6,7 @@
   </head>
 <body>
  <h1>猫を追うきゅうり</h1>
- きゅうりが猫をどこまでも追いかけてい.きゅうりを見せると猫が驚くa<br>
+ きゅうりが猫をどこまでも追いかけてい.きゅうりを見せると猫が驚く<br>
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -72,23 +72,23 @@
         var cylinderGeometry = new THREE.CylinderGeometry( 0.05, 0.05, 2, 32);
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
         var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cone.position.set(1.5,0,1.5);
+        cylinder.position.set(1.5,0,1.5);
         scene.add(cylinder);
         /*
         for(let i = 0; i < 10; i++){
-          cone.position.set(1,0,i*0.1);
+          cylinder.position.set(1,0,i*0.1);
           scene.add(cylinder);
         }
         for(let i = 0; i < 10; i++){
-          cone.position.set(-1,0,i*0.1);
+          cylinder.position.set(-1,0,i*0.1);
           scene.add(cylinder);
         }
         for(let i = 0; i < 10; i++){
-          cone.position.set(i*0.1,0,1);
+          cylinder.position.set(i*0.1,0,1);
           scene.add(cylinder);
         }
         for(let i = 0; i < 10; i++){
-          cone.position.set(i*0.1,0,-1);
+          cylinder.position.set(i*0.1,0,-1);
           scene.add(cylinder);
         }*/
         /*
