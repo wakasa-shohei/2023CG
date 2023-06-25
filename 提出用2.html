@@ -70,10 +70,16 @@
         sprite2.position.set(0,1,0);
         scene.add(sprite2);
 
-        /*柱を40本立てて檻に見立てる*/
+        //柱を40本立てて檻に見立てる
         var cylinderGeometry = new THREE.CylinderGeometry( 0.1, 0.1, 2, 32);
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
-        var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        //var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        for(let i = 0; i < 20; i++){
+          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+          cylinder.position.set(1,0,1-0.1*i);
+          scene.add(cylinder);
+        }
+        /*
         cylinder.position.set(1,0,1);
         scene.add(cylinder);
         cylinder.position.set(1,0,0.8);
@@ -118,7 +124,7 @@
         scene.add(cylinder);
         cylinder.position.set(-1,0,-1);
         scene.add(cylinder);
-        
+        */
         /*
         var planeGeometry = new THREE.PlaneGeometry(10,10);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xfafafa });
