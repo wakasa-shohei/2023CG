@@ -98,6 +98,7 @@
         var planeGeometry = new THREE.PlaneGeometry(2,2);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xfafafa });
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-1,0);
         scene.add(plane);
         
