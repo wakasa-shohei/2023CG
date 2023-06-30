@@ -27,12 +27,31 @@
   
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  
+	
+    // 平行光源1
+    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+    directionalLight1.position.set(1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight1);
+    // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+    directionalLight2.position.set(-1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight2);
+
+
+	
+	  var textureLoader = new THREE.TextureLoader(); 
+	  var texture= textureLoader.load("earth.png");
+
+	  var mat = new THREE.MeshPhongMaterial();
+	  mat.map = texture;
+	  
 	  const geometry = new THREE.SphereGeometry( 0.1, 32, 16 );
-	  const material = new THREE.MeshBasicMaterial( { color: 0xffffff,} );
+	  //const material = new THREE.MeshBasicMaterial( { color: 0xffffff,} );
 
 	  for ( let i = 0; i < 500; i ++ ) {
-		  const mesh = new THREE.Mesh( geometry, material );
+		  const mesh = new THREE.Mesh( geometry, mat);
 
 		  mesh.position.x = Math.random() * 10 - 5;
 		  mesh.position.y = Math.random() * 10 - 5;
@@ -49,25 +68,10 @@
 		  spheres.push( mesh );
 	  }
   
-    // 平行光源1
-    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-    directionalLight1.position.set(1, 1, 1);
-    // シーンに追加
-    scene.add(directionalLight1);
-    // 平行光源2
-        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-    directionalLight2.position.set(-1, 1, 1);
-    // シーンに追加
-    scene.add(directionalLight2);
-  
     // 初回実行
     var update = function() {
       requestAnimationFrame(update);
-  
-      // 箱を回転させる
-      box.rotation.x += 0.01;
-      box.rotation.y += 0.01;
-  
+
       renderer.render(scene, camera);
     };
     update();
