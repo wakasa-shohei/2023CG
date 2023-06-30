@@ -42,7 +42,7 @@
 
         // マテリアルを作成する
         const material = new THREE.SpriteMaterial({
-          map: new THREE.TextureLoader().load('img/star.png')
+          map: new THREE.TextureLoader().load('star.png')
         });
         // フォグ（霞）を有効にする
         material.fog = true;
@@ -64,7 +64,7 @@
         const sphereGeometry = new THREE.SphereGeometry( 150, 32, 32 ); 
         //半径、垂直方向の分割数、水平方向の分割数
         const textureLoader = new THREE.TextureLoader();
-        const erathtexture = textureLoader.load("img/earth.png");
+        const erathtexture = textureLoader.load("earth.png");
         const sphereMaterial = new THREE. MeshPhongMaterial();
         sphereMaterial.map = erathtexture;
         const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
