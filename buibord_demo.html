@@ -118,7 +118,7 @@ class Sample {
 
   createMesh (src, width, height, posX, posY, posZ) {
     const geom = new THREE.PlaneGeometry(width,height,20);
-    const PATH = './img/';
+    const PATH = './/';
     const textureLoader = new THREE.TextureLoader();
     const texture = textureLoader.load(PATH + src);
     const mat = new THREE.MeshBasicMaterial({transparent:true});
