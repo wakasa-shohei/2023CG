@@ -45,15 +45,14 @@
 		 
 		 var textureLoader = new THREE.TextureLoader(); 
 		 var texture= textureLoader.load("earth.png");
-		 
 		 var mat = new THREE.MeshPhongMaterial();
 		 mat.map = texture;
 		 
 		 const geometry = new THREE.SphereGeometry( 0.1, 32, 16 );
-		 const material = new THREE.MeshBasicMaterial( { color: 0xffffff,} );
+		 //const material = new THREE.MeshBasicMaterial( { color: 0xffffff,} );
 		 
 		 for ( let i = 0; i < 500; i ++ ) {
-			 const mesh = new THREE.Mesh( geometry, material);
+			 const mesh = new THREE.Mesh( geometry, mat);
 			 mesh.position.x = Math.random() * 10 - 5;
 			 mesh.position.y = Math.random() * 10 - 5;
 			 mesh.position.z = Math.random() * 10 - 5;
