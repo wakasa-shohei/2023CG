@@ -27,12 +27,11 @@
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
   
 //球
-var geo = new THREE.SphereGeometry( 0.5, 32, 32 ); 
-//半径、垂直方向の分割数、水平方向の分割数
+var geo = new THREE.SphereGeometry( 0.1, 32, 32 ); 
 var mat = new THREE. MeshPhongMaterial( {color: 0x00ffff,wireframe: true} );
-var mesh = new THREE.Mesh( geo,mat );
+var sphere = new THREE.Mesh( geo,mat );
 mesh.position.set( 0, 0, -5 );
-scene.add(mesh);
+scene.add(sphere);
 
 
 
