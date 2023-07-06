@@ -27,9 +27,9 @@
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
   
 //球
-var geo = new THREE.SphereGeometry( 0.1, 32, 32 ); 
-var mat = new THREE. MeshPhongMaterial( {color: 0x00ffff,wireframe: true} );
-var sphere = new THREE.Mesh( geo,mat );
+var sphereGeometry = new THREE.SphereGeometry( 0.1, 32, 32 ); 
+var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x00ffff,wireframe: true} );
+var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial);
 mesh.position.set( 0, 0, -5 );
 scene.add(sphere);
 
