@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <title>最終作品</title>
 
-  <!-- three.jsを読み込む(ローカル) -->
-  <!-- <script src="./three.js"></script> -->
-  <!-- three.jsを読み込む(CDN) -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+<script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+	
 </head>
 <body>
 あい
@@ -22,12 +21,13 @@
 		 var renderer = new THREE.WebGLRenderer();
 		 document.body.appendChild(renderer.domElement);
 		 renderer.setSize(width, height);
+		 renderer.setClearColor(0xeeeeee);
 		 
 		 // シーンを作成
 		 var scene = new THREE.Scene();
 		 
 		 // カメラを作成
-		 var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+		 var camera = new THREE.PerspectiveCamera(45, width / height);
 		 camera.position.set(0, 0, 5);
 		 const controls = new THREE.OrbitControls(camera, document.body); 
 		
