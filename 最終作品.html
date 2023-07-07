@@ -42,9 +42,9 @@
         // シーンに追加
         scene.add(directionalLight2);
 	
-	var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("earth.png");
-        var mat = new THREE.MeshPhongMaterial();
+	const textureLoader = new THREE.TextureLoader();  
+        const texture = textureLoader.load("earth.png");
+        const mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
         
 
