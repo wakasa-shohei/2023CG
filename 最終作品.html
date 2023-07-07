@@ -5,7 +5,7 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   </head>
 <body>
- <h1>最終作品</h1>
+ <h1>きゅうりから逃げる猫</h1>
  きゅうりの場所から逃げようとしている猫を作った。実際には飛び跳ねて驚く個体もいるらしい<br>
   工夫した点は猫を逃さないようx,y,z座標のどれかが0.8を超える又は-0.8よりも小さくなると猫の座標を(0,-0.8,0)に戻すようにして檻を作ったところ<br>
  <script>
@@ -49,14 +49,34 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
         */
-        
+        // 猫をスプライトで作成
+        var textureLoader = new THREE.TextureLoader(); 
+        var texture= textureLoader.load("cat.png");
+        const material1 = new THREE.SpriteMaterial({ map: texture,});
 
+        //きゅうりをスプライトで作成
+        var textureLoader = new THREE.TextureLoader();
+        var texture = textureLoader.load("kyuri.png");
+        const material2 = new THREE.SpriteMaterial({ map: texture,});
+        
         //地面のテクスチャ
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("earth.png");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
         
+        // 猫を作成
+        const sprite1 = new THREE.Sprite(material1);
+        sprite1.scale.set(0.4, 0.4, 0.4);
+        sprite1.position.set(0,-0.8,0);
+        scene.add(sprite1);
+        
+        const sprite2=new THREE.Sprite(material2);
+        sprite2.scale.set(0.4,0.4,0.4);
+        sprite2.position.set(0,-0.8,0);
+        scene.add(sprite2);
+
+        //柱を40本立てて檻に見立てる
         var cylinderGeometry = new THREE.CylinderGeometry( 0.01, 0.01, 2, 32);
         var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0xaaaaaa} );
         //var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
@@ -81,10 +101,26 @@
           scene.add(cylinder);
         }
         
+        var planeGeometry = new THREE.PlaneGeometry(2,2);
+        //var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xfafafa });
+        //var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        var plane = new THREE.Mesh(planeGeometry, mat);
+        const material = new THREE.SpriteMaterial({ map:plane,});
+        plane.rotation.set( -Math.PI/2, 0, 0 );
+        plane.position.set(0,-1,0);
+        scene.add(plane);
         
         update();
         // 毎フレーム時に実行されるループイベントです
-        function update() {}
+        function update() {
+          //猫の動き
+          sprite1.position.x+= 0.5 * (Math.random() - 0.5);
+          sprite1.position.y+= 0.5 * (Math.random() - 0.5);
+          sprite1.position.z+= 0.5 * (Math.random() - 0.5);
+          
+          if(sprite1.position.x>0.8||sprite1.position.y>0.8||sprite1.position.z>0.8||sprite1.position.x<-0.8||sprite1.position.z<-0.8||sprite1.position.y<-0.8){
+            sprite1.position.set(0,-0.8,0);
+          }
           
           // レンダリング
           renderer.render(scene, camera);
