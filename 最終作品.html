@@ -4,7 +4,7 @@
     <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   　<title>最終作品</title>
-ab
+
     
   </head>
   <body>
@@ -57,7 +57,7 @@ ab
 
 		scene.add(sphere);
 	}*/
-	const geo1 = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+	const geo1 = new THREE.BoxGeometry(0.3, 0.2, 0.1);
 	const mat1 = new THREE.MeshPhongMaterial({ color: 0x9900ff });
 	for ( let i = 0; i < 200; i ++ ) {
 		const box1 = new THREE.Mesh(geo1, mat1);
@@ -82,8 +82,8 @@ ab
 		box2.scale.x = box2.scale.y = box2.scale.z = Math.random() * 3 + 1;
 
 		scene.add(box2);
-	}
-	const geo3= new THREE.BoxGeometry(0.2, 0.1, 0.3);
+	}/*
+	const geo3= new THREE.BoxGeometry(0.1, 0.3, 0.2);
 	const mat3 = new THREE.MeshPhongMaterial({ color: 0x08ff08 });
 	for ( let i = 0; i < 200; i ++ ) {
 		const box3 = new THREE.Mesh( geo3, mat3 );
@@ -95,7 +95,7 @@ ab
 		box3.scale.x = box3.scale.y = box3.scale.z = Math.random() * 3 + 1;
 
 		scene.add(box3);
-	}
+	}*/
 
         update();
         function update() {
