@@ -58,10 +58,10 @@
 		scene.add(sphere);
 	}
 	
-	const geo1 = new THREE.BoxGeometry(0.3, 0.2, 0.1);
-	const mat1 = new THREE.MeshPhongMaterial({ color: 0x9900ff });
+	const geo = new THREE.BoxGeometry(0.3, 0.2, 0.1);
+	const mat = new THREE.MeshPhongMaterial({ color: 0x9900ff });
 	for ( let i = 0; i < 200; i ++ ) {
-		const box1 = new THREE.Mesh(geo1, mat1);
+		const box1 = new THREE.Mesh(geo, mat);
 		
 		box.position.x = Math.random() * 10 - 5;
 		box.position.y = Math.random() * 10 - 5;
