@@ -59,7 +59,7 @@
 	}
 	
 	const geo = new THREE.BoxGeometry(0.3, 0.2, 0.1);
-	const mat = new THREE.MeshPhongMaterial({ color: 0x9900ff });
+	const mat = new THREE.MeshPhongMaterial({ color: 0x9900ff,wireframe: true });
 	for ( let i = 0; i < 200; i ++ ) {
 		const box1 = new THREE.Mesh(geo, mat);
 		
@@ -71,9 +71,9 @@
 
 		scene.add(box1);
 	}
-	/*
+	
 	const geo2= new THREE.BoxGeometry(0.2, 0.1, 0.3);
-	const mat2 = new THREE.MeshPhongMaterial({ color: 0xff0088 });
+	const mat2 = new THREE.MeshPhongMaterial({ color: 0xff0088 ,wireframe: true});
 	for ( let i = 0; i < 200; i ++ ) {
 		const box2 = new THREE.Mesh( geo2, mat2 );
 		
@@ -86,7 +86,7 @@
 		scene.add(box2);
 	}
 	const geo3= new THREE.BoxGeometry(0.1, 0.3, 0.2);
-	const mat3 = new THREE.MeshPhongMaterial({ color: 0x08ff08 });
+	const mat3 = new THREE.MeshPhongMaterial({ color: 0x08ff08,wireframe: true });
 	for ( let i = 0; i < 200; i ++ ) {
 		const box3 = new THREE.Mesh( geo3, mat3 );
 		
@@ -97,7 +97,7 @@
 		box3.scale.x = box3.scale.y = box3.scale.z = Math.random() * 3 + 1;
 
 		scene.add(box3);
-	}*/
+	}
 
         update();
         function update() {
