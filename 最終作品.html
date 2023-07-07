@@ -112,13 +112,6 @@
         update();
         // 毎フレーム時に実行されるループイベントです
         function update() {
-          //猫の動き
-          sprite1.position.x+= 0.5 * (Math.random() - 0.5);
-          sprite1.position.y+= 0.5 * (Math.random() - 0.5);
-          sprite1.position.z+= 0.5 * (Math.random() - 0.5);
-          
-          if(sprite1.position.x>0.8||sprite1.position.y>0.8||sprite1.position.z>0.8||sprite1.position.x<-0.8||sprite1.position.z<-0.8||sprite1.position.y<-0.8){
-            sprite1.position.set(0,-0.8,0);
           }
           
           // レンダリング
