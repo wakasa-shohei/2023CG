@@ -112,11 +112,9 @@
         update();
         // 毎フレーム時に実行されるループイベントです
         function update() {
-          }
-          
-          // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+          }
         }
       }
     </script>
