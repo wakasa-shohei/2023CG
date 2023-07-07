@@ -45,22 +45,45 @@
         const sphereGeometry = new THREE.SphereGeometry( 0.1, 32, 32 ); 
         const sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x90fe5f,wireframe: true} );
         
-        for ( let i = 0; i < 500; i ++ ) {
+        for ( let i = 0; i < 200; i ++ ) {
+		const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 
-					const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+		sphere.position.x = Math.random() * 10 - 5;
+		sphere.position.y = Math.random() * 10 - 5;
+		sphere.position.z = Math.random() * 10 - 5;
 
-					sphere.position.x = Math.random() * 10 - 5;
-					sphere.position.y = Math.random() * 10 - 5;
-					sphere.position.z = Math.random() * 10 - 5;
+		sphere.scale.x = sphere.scale.y = sphere.scale.z = Math.random() * 3 + 1;
 
-					sphere.scale.x = sphere.scale.y = sphere.scale.z = Math.random() * 3 + 1;
+		scene.add(sphere);
+	}
+	const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+	const material = new THREE.MeshPhongMaterial({ color: 0xa3de4f });
+	for ( let i = 0; i < 200; i ++ ) {
+		const box = new THREE.Mesh( geometry, material );
+		
+		box.position.x = Math.random() * 10 - 5;
+		box.position.y = Math.random() * 10 - 5;
+		box.position.z = Math.random() * 10 - 5;
+		
+		box.scale.x = box.scale.y = box.scale.z = Math.random() * 3 + 1;
 
-					scene.add(sphere);
-				}
+		scene.add(box);
+	}
+
         update();
         function update() {
-          requestAnimationFrame(update);
-          renderer.render(scene, camera);
+		box.rotation.x += 0.01;
+		box.rotation.y += 0.01;
+		box.rotation.z += 0.01;
+		
+		sphere.rotation.x += 0.01;
+		sphere.rotation.y += 0.01;
+		sphere.rotation.z += 0.01;
+
+
+		
+		requestAnimationFrame(update);
+		renderer.render(scene, camera);
           }
         }
     </script>
