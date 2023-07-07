@@ -69,6 +69,19 @@
 
 		scene.add(box);
 	}
+	const geo= new THREE.BoxGeometry(0.2, 0.1, 0.3);
+	const mat = new THREE.MeshPhongMaterial({ color: 0xff0088 });
+	for ( let i = 0; i < 200; i ++ ) {
+		const box2 = new THREE.Mesh( geo, mat );
+		
+		box.position.x = Math.random() * 10 - 5;
+		box.position.y = Math.random() * 10 - 5;
+		box.position.z = Math.random() * 10 - 5;
+		
+		box.scale.x = box.scale.y = box.scale.z = Math.random() * 3 + 1;
+
+		scene.add(box);
+	}
 
         update();
         function update() {
