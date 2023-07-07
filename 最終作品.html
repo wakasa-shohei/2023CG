@@ -41,33 +41,12 @@
         directionalLight2.position.set(-10, -10, 10);
         // シーンに追加
         scene.add(directionalLight2);
-
-        // 猫をスプライトで作成
-        var textureLoader = new THREE.TextureLoader(); 
-        var texture= textureLoader.load("cat.png");
-        const material1 = new THREE.SpriteMaterial({ map: texture,});
-
-        //きゅうりをスプライトで作成
-        var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load("kyuri.png");
-        const material2 = new THREE.SpriteMaterial({ map: texture,});
         
         //地面のテクスチャ
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("earth.png");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
-        
-        // 猫を作成
-        const sprite1 = new THREE.Sprite(material1);
-        sprite1.scale.set(0.4, 0.4, 0.4);
-        sprite1.position.set(0,-0.8,0);
-        scene.add(sprite1);
-        
-        const sprite2=new THREE.Sprite(material2);
-        sprite2.scale.set(0.4,0.4,0.4);
-        sprite2.position.set(0,-0.8,0);
-        scene.add(sprite2);
 
         //柱を40本立てて檻に見立てる
         var cylinderGeometry = new THREE.CylinderGeometry( 0.01, 0.01, 2, 32);
@@ -93,15 +72,6 @@
           cylinder.position.set(1-0.1*i,0,-1);
           scene.add(cylinder);
         }
-        
-        var planeGeometry = new THREE.PlaneGeometry(2,2);
-        //var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xfafafa });
-        //var plane = new THREE.Mesh(planeGeometry,planeMaterial);
-        var plane = new THREE.Mesh(planeGeometry, mat);
-        const material = new THREE.SpriteMaterial({ map:plane,});
-        plane.rotation.set( -Math.PI/2, 0, 0 );
-        plane.position.set(0,-1,0);
-        scene.add(plane);
         
         update();
         function update() {
