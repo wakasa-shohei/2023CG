@@ -42,37 +42,6 @@
         // シーンに追加
         scene.add(directionalLight2);
         
-        //地面のテクスチャ
-        var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("earth.png");
-        var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture;
-
-        //柱を40本立てて檻に見立てる
-        var cylinderGeometry = new THREE.CylinderGeometry( 0.01, 0.01, 2, 32);
-        var cylinderMaterial = new THREE. MeshPhongMaterial( {color: 0xaaaaaa} );
-        
-        for(let i = 0; i < 20; i++){
-          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-          cylinder.position.set(1,0,1-0.1*i);
-          scene.add(cylinder);
-        }
-        for(let i = 0; i < 20; i++){
-          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-          cylinder.position.set(-1,0,1-0.1*i);
-          scene.add(cylinder);
-        }
-        for(let i = 0; i < 20; i++){
-          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-          cylinder.position.set(1-0.1*i,0,1);
-          scene.add(cylinder);
-        }
-        for(let i = 0; i < 20; i++){
-          var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-          cylinder.position.set(1-0.1*i,0,-1);
-          scene.add(cylinder);
-        }
-        
         update();
         function update() {
           renderer.render(scene, camera);
