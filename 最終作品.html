@@ -43,7 +43,7 @@
         // シーンに追加
         scene.add(directionalLight2);
 
-        const sphereGeometry = new THREE.SphereGeometry( 0.1, 32, 32 ); 
+        /*const sphereGeometry = new THREE.SphereGeometry( 0.1, 32, 32 ); 
         const sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x90fe5f,wireframe: true} );
         
         for ( let i = 0; i < 200; i ++ ) {
@@ -57,9 +57,10 @@
 
 		scene.add(sphere);
 	}
-	
+	*/
+	      
 	const geo = new THREE.BoxGeometry(0.3, 0.2, 0.1);
-	const mat = new THREE.MeshPhongMaterial({ color: 0x9900ff,wireframe: true });
+	const mat = new THREE.MeshPhongMaterial({ color: 0x9900ff });
 	for ( let i = 0; i < 200; i ++ ) {
 		const box1 = new THREE.Mesh(geo, mat);
 		
@@ -73,7 +74,7 @@
 	}
 	
 	const geo2= new THREE.BoxGeometry(0.2, 0.1, 0.3);
-	const mat2 = new THREE.MeshPhongMaterial({ color: 0xff0088 ,wireframe: true});
+	const mat2 = new THREE.MeshPhongMaterial({ color: 0xff0088 });
 	for ( let i = 0; i < 200; i ++ ) {
 		const box2 = new THREE.Mesh( geo2, mat2 );
 		
@@ -86,7 +87,7 @@
 		scene.add(box2);
 	}
 	const geo3= new THREE.BoxGeometry(0.1, 0.3, 0.2);
-	const mat3 = new THREE.MeshPhongMaterial({ color: 0x08ff08,wireframe: true });
+	const mat3 = new THREE.MeshPhongMaterial({ color: 0x08ff08});
 	for ( let i = 0; i < 200; i ++ ) {
 		const box3 = new THREE.Mesh( geo3, mat3 );
 		
