@@ -4,8 +4,8 @@
     <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   　<title>最終作品</title>
-
-    ac
+	  <h1>工夫した点</h1>
+様々な長さの四角を無作為に配置した
   </head>
   <body>
     <script>
@@ -60,7 +60,7 @@
 	*/
 	      
 	const geo = new THREE.BoxGeometry(0.3, 0.2, 0.1);
-	const mat = new THREE.MeshPhongMaterial({ color: 0x9900ff,wireframe: true});
+	const mat = new THREE.MeshPhongMaterial({ color: 0x9900ff});
 	for ( let i = 0; i < 200; i ++ ) {
 		const box1 = new THREE.Mesh(geo, mat);
 		
