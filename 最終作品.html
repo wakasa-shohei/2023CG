@@ -74,13 +74,13 @@
 	for ( let i = 0; i < 200; i ++ ) {
 		const box2 = new THREE.Mesh( geo, mat );
 		
-		box.position.x = Math.random() * 10 - 5;
-		box.position.y = Math.random() * 10 - 5;
-		box.position.z = Math.random() * 10 - 5;
+		box2.position.x = Math.random() * 10 - 5;
+		box2.position.y = Math.random() * 10 - 5;
+		box2.position.z = Math.random() * 10 - 5;
 		
-		box.scale.x = box.scale.y = box.scale.z = Math.random() * 3 + 1;
+		box2.scale.x = box2.scale.y = box2.scale.z = Math.random() * 3 + 1;
 
-		scene.add(box);
+		scene.add(box2);
 	}
 
         update();
